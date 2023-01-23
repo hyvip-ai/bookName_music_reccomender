@@ -170,7 +170,11 @@ function Dashboard() {
                   value={bookName}
                   onChange={(e) => setBookName(e.target.value)}
                 />
-                <button className='submit' onClick={handleFormSubmit}>
+                <button
+                  className='submit'
+                  onClick={handleFormSubmit}
+                  disabled={!bookName}
+                >
                   Submit
                 </button>
               </form>
