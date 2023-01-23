@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 const AUTH_URL =
-  'https://accounts.spotify.com/authorize?client_id=1b1c6e6bafda4a98a793be1a4ddd4ed1&response_type=code&redirect_uri=http://localhost:3000&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20playlist-modify%20playlist-modify-private';
+  'https://accounts.spotify.com/authorize?client_id=1b1c6e6bafda4a98a793be1a4ddd4ed1&response_type=code&redirect_uri=https://book-name-music-reccomender.vercel.app&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state%20playlist-modify%20playlist-modify-private';
 
 function Login() {
   const router = useRouter();

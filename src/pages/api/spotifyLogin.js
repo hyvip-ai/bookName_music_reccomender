@@ -3,7 +3,7 @@ import SpotifyWebApi from 'spotify-web-api-node';
 var credentials = {
   clientId: '1b1c6e6bafda4a98a793be1a4ddd4ed1',
   clientSecret: '16344c402c7c4861a31971c99ea1d554',
-  redirectUri: 'http://localhost:3000',
+  redirectUri: 'https://book-name-music-reccomender.vercel.app',
 };
 
 export default async function handler(req, res) {
