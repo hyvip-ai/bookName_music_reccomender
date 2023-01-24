@@ -32,7 +32,7 @@ export async function getKeywordsFromBookName(bookName) {
 export async function getSongFromKeywords(keywords, access_token) {
   try {
     spotifyAPI.setAccessToken(access_token);
-    const response = await spotifyAPI.searchTracks(keywords.join(', '));
+    const response = await spotifyAPI.searchTracks(keywords);
     return response.body.tracks.items;
   } catch (err) {
     toast.error(err.message);
