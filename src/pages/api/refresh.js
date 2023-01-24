@@ -12,7 +12,6 @@ export default async function handler(req, res) {
     .refreshAccessToken()
     .then((data) => {
       spotifyApi.setAccessToken(data.body['access_token']);
-      console.log(data.body);
       res.status(200).json({ ...data.body });
     })
     .catch((err) => {

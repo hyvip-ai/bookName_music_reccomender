@@ -39,7 +39,6 @@ function Dashboard() {
         const keywords = await getKeywordsFromBookName(bookName);
         const songs = await getSongFromKeywords(keywords, access_token);
         const newSongs = modifySongs(songs);
-        console.log(songs);
         setSongs([...newSongs]);
       } else {
         throw new Error('Access token not there');
@@ -69,18 +68,6 @@ function Dashboard() {
     }
     setLoading(false);
   };
-
-  useEffect(() => {
-    let timeout;
-    if (refresh_token) {
-      timeout = setTimeout(() => {
-        handleRefreshToken();
-      }, (expires_in - 60) * 1000);
-    }
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [access_token]);
 
   useEffect(() => {
     if (refresh_token) {

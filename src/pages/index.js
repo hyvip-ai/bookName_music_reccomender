@@ -30,7 +30,6 @@ export default function Home() {
       });
       router.push('/dashboard');
     } catch (err) {
-      console.log(err.message);
       toast.error(err.message);
     }
   };
