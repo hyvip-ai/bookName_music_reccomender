@@ -13,21 +13,15 @@ const openai = new OpenAIApi(configuration);
 
 // Book keywords
 export async function getKeywordsFromBookName(bookName) {
-  const prompt = `Please determine the mood of the book ${bookName} in unordered list format:`;
+  const prompt = `Write the different moods of the book ${bookName} separated by commas`;
   try {
     const response = await openai.createCompletion({
       model: 'text-davinci-002',
       prompt,
       max_tokens: 1024,
     });
+    const keywords = response.data.choices[0].text;
 
-    const regex = new RegExp(/\r?\n|\r/g);
-
-    const keywords = response.data.choices[0].text
-      .replace(regex, ' ')
-      .split('- ')
-      .map((item) => item.trim())
-      .filter((item) => (item && item !== '-' ? item : false));
     return keywords;
   } catch (err) {
     toast.error(err.message);
